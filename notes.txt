@@ -9,3 +9,16 @@ win: venv\Scripts\activate
 
 #install flask
 py -m pip install flask
+
+
+#initialize the Reppo
+git init
+
+#create local snapshot
+git add . 
+git commit -m "Somenthing"
+
+#setup the remote url
+git remote add origin git@github.com:Frank151001/backend.git
+
+checking the changes
