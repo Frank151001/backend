@@ -1,0 +1,11 @@
+# create a virtual env
+py -m venv venv
+
+
+
+# activate the venv
+
+win: venv\Scripts\activate
+
+#install flask
+py -m pip install flask
