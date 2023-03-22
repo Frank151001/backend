@@ -32,6 +32,24 @@ def product_count():
     count=len(mock_data)
     return json.dumps(count)
 
+@app.get("/api/products/total")
+def product_total():
+    total=0
+    for product in mock_data:
+        price=product ["price"]
+        total = total+ price
+    return json.dumps(total)
+
+@app.get('/api/categories')
+def categories():
+    cats = []
+    for product in mock_data:
+        category = product["category"]
+
+        if category not in cats:
+            cats.append(category)
+    return json.dumps(cats)    
+
 @app.get("/api/developer/name")
 def developer_name():
     name=me["name"]
@@ -41,6 +59,13 @@ def developer_name():
     return json.dumps(response)
 
 
+@app.get("/api/catalog/<category>")
+def product_by_category(category):
+    P_list=[]
+    for prod in mock_data:
+        if prod["category"].lower()==category.lower():
+            P_list.append(prod)
+    return json.dumps(P_list)
 
 #start the server
 app.run(debug=True)
