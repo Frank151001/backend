@@ -1,6 +1,6 @@
 mock_data=[
      {
-        "title":"milk",
+        "title":"belt",
         "category":"personal",
         "price":8.99,
         "image":"belt.jpg",
